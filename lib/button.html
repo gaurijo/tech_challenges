@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #container {
+      background-color: black;
+    }
+
+    #button {
+      color: yellow;
+      background-color: blue;
+    }
+
+    #button:hover {
+      background-color: green;
+    }
+
+    #box {
+      width: 100%;
+      background-color: white;
+    }
+
+    #greenapple:hover {
+      background-color: green;
+    }
+
+    #orange:hover {
+      background-color: orange;
+    }
+
+    #cherry:hover {
+      background-color: red;
+    }
+
+    #blueberry:hover {
+      background-color: blue;
+    }
+
+    #banana:hover {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <button id="button">Button</button>
+    <div id="box">
+      <ul>
+        <li id="greenapple">Green Apple</li>
+        <li id="orange">Orange</li>
+        <li id="cherry">Cherry</li>
+        <li id="blueberry">Blueberry</li>
+        <li id="banana">Banana</li>
+      </ul>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function() {
+        $("#button").click(function() {
+          var items = ["Green Apple", "Orange", "Cherry", "Blueberry", "Banana"];
+          var randomItem = items[Math.floor(Math.random() * items.length)];
+          $("#box ul").append("<li>" + randomItem + "</li>");
+        });
+      });
+  </script>
+</body>
+
+</html>

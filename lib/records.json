@@ -1,0 +1,12 @@
+{
+  "team1": {
+    "team2": "W-L",
+    "team3": "W-L",
+    "team4": "W-L"
+  },
+  "team2": {
+    "team1": "W-L",
+    "team3": "W-L",
+    "team4": "W-L"
+  }
+}
