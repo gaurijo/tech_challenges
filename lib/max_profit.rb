@@ -1,16 +1,46 @@
 def max_profit(prices)
-  min_value = prices.min
-  min_index = prices.find_index(min_value)
-  max_array = prices[min_index..-1]
-  max_value = max_array.max 
-  # max_index = max_array.find_index(max_value)
-  profit = max_value - min_value 
+  max = 0
+  min_price = prices[0]
+
+  prices.each do |price|
+    min_price = price if price < min_price
+    temporary = price - min_price
+    max = temporary if temporary > max
+  end
+  return max
 end
 
-# prices = [7,1,5,3,6,4]
+# prices = [2,4,1]
+prices = [7,1,5,3,6,4]
 # prices = [7,6,4,3,1]
-prices = [2,4,1]
 p max_profit(prices)
+
+# def max_profit(prices)
+#   min_value = prices.min
+#   min_index = prices.find_index(min_value)
+#   max_array = prices[min_index..-1]
+#   max_value = max_array.max 
+#   # max_index = max_array.find_index(max_value)
+#   profit = max_value - min_value 
+#   p profit 
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #input: prices (array)
 #output: max profit you can achieve from buying and selling a stock (integer)
 
