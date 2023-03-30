@@ -22,6 +22,8 @@ def to_camel_case(str)
       camel << s.capitalize if i != 0
     end
     str.split(Regexp.union(delimiters)).first + camel.join
+  elsif str == ""
+    return ""
   end
 end
 
