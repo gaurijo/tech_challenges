@@ -33,5 +33,39 @@ def to_roman(num)
   end
   result
 end
+p to_roman(1994)
 
-p to_roman(2000)
+def roman_to_int(s)
+  roman_hash = {"I" => 1, 
+                "V" => 5,
+                "X" => 10,
+                "L" => 50,
+                "C" => 100,
+                "D" => 500,
+                "M" => 1000
+              }
+  result = 0
+  previous = 0
+
+  # reverse the roman string array, and for each character:
+  # if the current character's value is greater than or equal to previous
+  # increment the result with the current value 
+  # otherwise decrement the result with the current value 
+  # This is because in Roman numerals, a smaller number to the left of a larger number means that the smaller number is subtracted from the larger number (e.g., IV is 4, not 6).
+  # set the previous to the current value so that it can be used in the next iteration of the loop.
+  # give the result 
+  s.reverse.each_char do |char|
+    current = roman_hash[char]
+    if current >= previous 
+      result += current 
+    else
+      result -= current 
+    end
+    previous = current
+  end
+  result  
+end
+
+p roman_to_int("MCMXCIV")
+
+
