@@ -18,22 +18,20 @@ def to_roman(num)
 
   result = ""
 
-  roman_numerals.keys.each do |value|
+  roman_numerals.keys.each do |k|
     # Loop through the Roman Numeral values in descending order
     # as many times as needed
-    while num >= value
+    while num >= k
       # while the num argument is greater or equal to the value of the element in the array, 
-      num -= value
+      num -= k
       # decrement num by the value 
-      result << roman_numerals[value]
-      # require 'pry'; binding.pry 
+      result << roman_numerals[k]
       # add the corresponding Roman Numeral to the result string
-      # require 'pry'; binding.pry 
     end
   end
   result
 end
-p to_roman(1994)
+p to_roman(1992)
 
 def roman_to_int(s)
   roman_hash = {"I" => 1, 
@@ -66,6 +64,6 @@ def roman_to_int(s)
   result  
 end
 
-p roman_to_int("MCMXCIV")
+p roman_to_int("MCMXCII")
 
 
